@@ -52,13 +52,15 @@ function textoAstring(txt, separador) {
 
 };
 
-function repiteTexto(txt,valorN) {
-    for (let i = 0; i < valorN; i++) {
-        console.log(`Posición ${i} caracter ${txt[i]}`)
-        txt+= txt
+function repiteTexto(txt, veces) {
+    if (typeof txt === 'string') {
+        let resultado = (txt + ' ').repeat(veces).trim();
+        return resultado;
+    } else{
+        return 'El valor ingresado no es un texto';
     }
-    return txt + txt;
-}
+
+};
 
 
 
