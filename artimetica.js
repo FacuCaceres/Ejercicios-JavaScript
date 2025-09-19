@@ -26,37 +26,51 @@ pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
 4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) 
 devolverá Hola Mundo Hola Mundo Hola Mundo.
  */
-
-function cuentaCadena(txt) {
+const cuentaCadena = (txt = "") => {
     let cadena = txt;
-    if (typeof txt === 'string') {
+    if (!cadena) {
+        return 'No hay datos ingresados';
+    }
+    else if (typeof txt === 'string') {
         cadena = txt;
     } else {
         return 'El tipo de dato ingresado no es un string';
     }
 
     return `La cadena de texto ingresada "${cadena}" tiene "${cadena.length}" carateres.`
+}
+
+const recortaCadena = (txt = '', posicion = '') => {
+    let rta = null;
+    if (!txt || !posicion) {
+        return 'Algun dato TEXTO o POSICIÓN fueron ingresados vacíos';
+    } else {
+        rta = txt.slice(txt, posicion);
+        return rta;
+    }
 };
 
-function recortaCadena(txt, posicion) {
-    let rta = txt.slice(txt, posicion);
-    return rta;
+
+const textoAstring = (txt = '', separador = '') => {
+    let arregloDeTexto = null;
+    if (!txt || !separador) {
+        return 'Algunos parametros fueron ingresados';
+    } else {
+        arregloDeTexto = txt.split(separador);
+        return arregloDeTexto;
+    }
+
+
 };
 
-function textoAstring(txt, separador) {
-    let arregloDeTexto = txt.split(separador);
-    /*     for (let i = 0 ; i < arregloDeTexto.length ; i++){
-            console.log(`Posisión "${i}" texto "${arregloDeTexto[i]}"`)
-        } */
-    return arregloDeTexto;
-
-};
-
-function repiteTexto(txt, veces) {
-    if (typeof txt === 'string') {
-        let resultado = (txt + ' ').repeat(veces).trim();
+const repiteTexto = (txt='', veces='') => {
+    let resultado = null;
+    if(!txt || !veces){
+        return 'Algunos parametros no fueron ingresados';
+    } else if (typeof txt === 'string') {
+        resultado = (txt + ' ').repeat(veces).trim();
         return resultado;
-    } else{
+    } else {
         return 'El valor ingresado no es un texto';
     }
 
