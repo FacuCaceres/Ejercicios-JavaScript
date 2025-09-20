@@ -158,7 +158,28 @@ function esPalindromo(palabra) {
     }
 
     return 'Es palindromo'; // si todas coinciden, sí es palíndromo
-}
+};
+
+let esPalindromoConMetodos = (txt) => {
+    // console.log(txt);
+    let textoInvertido = txt.split('').reverse().join('');
+    // console.log(textoInvertido);
+    if (textoInvertido === txt) return 'Es Palindromo';
+    return 'No es Palindromo';
+};
+
+
+/* 8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, 
+   xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5. */
+
+
+let eliminaPatrones = (txt, patron) => {
+    let expReg = new RegExp(patron,'g');
+    let textoLimpio = txt.replace(expReg,'');
+    return textoLimpio;
+};
+
+
 
 export const ejerciciosJon36 = {
     invierteArreglo,
@@ -166,6 +187,8 @@ export const ejerciciosJon36 = {
     deTextoAarregloSimple,
     cuentaPalabras,
     esPalindromo,
+    esPalindromoConMetodos,
+    eliminaPatrones,
 };
 
 export const ejeciciosJon34 = {

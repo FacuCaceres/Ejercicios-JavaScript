@@ -16,7 +16,7 @@ que divide un string en partes según el carácter que le indiques `;
 // console.log(`
 //     `)
 // console.log(ejeciciosJon34.repiteTexto('Hola',3))
-
+let txtConPatrones = '"xyz1,xyz2,xyz3,xyz4,xyz5"'
 let vocales = ['A','E','I','O','U'];
 let texto = 'Hola Mundo';
 let textoAcontar = 'Hola PePE Hola Juan Hola Pablo';
@@ -26,4 +26,6 @@ let palindromo = 'salas';
 // console.log(ejerciciosJon36.deTextoAarregloSimple(texto));
 // console.log(textoAcontar.split(' '));
 // console.log(ejerciciosJon36.cuentaPalabras(textoAcontar,'Hola'));
-console.log(ejerciciosJon36.esPalindromo(palindromo));
+// console.log(ejerciciosJon36.esPalindromo(palindromo));
+// console.log(ejerciciosJon36.esPalindromoConMetodos(palindromo));
+console.log(ejerciciosJon36.eliminaPatrones(txtConPatrones,'xyz'));
